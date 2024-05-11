@@ -2,10 +2,10 @@
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_13tsnka" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
   <bpmn:signal id="Signal_2q7im2d" name="comSignal-${id}" />
   <bpmn:collaboration id="Collaboration_1p48srx">
-    <bpmn:participant id="Participant_1ug4xl4" name="User Task " processRef="userTask_signal" />
+    <bpmn:participant id="Participant_1ug4xl4" name="User Task " processRef="userTask" />
     <bpmn:group id="Group_18ln50s" categoryValueRef="CategoryValue_158u0su" />
   </bpmn:collaboration>
-  <bpmn:process id="userTask_signal" name="User Task signal" isExecutable="true">
+  <bpmn:process id="userTask" name="User Task signal" isExecutable="true">
     <bpmn:laneSet id="LaneSet_11lsege">
       <bpmn:lane id="Lane_0827xmo">
         <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
@@ -17,10 +17,10 @@
         <bpmn:flowNodeRef>Event_12adv7h</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_1ehf83d">
-        <bpmn:flowNodeRef>Activity_1ewc3i5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0u8xsoo</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>com_signal</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_019slad</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1ewc3i5</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:startEvent id="StartEvent_1">
@@ -59,10 +59,6 @@
     <bpmn:endEvent id="Event_0u8xsoo">
       <bpmn:incoming>Flow_02sj8cn</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:serviceTask id="Activity_1ewc3i5" name="Publish Signal" camunda:delegateExpression="${logger}">
-      <bpmn:incoming>Flow_0ffjlwj</bpmn:incoming>
-      <bpmn:outgoing>Flow_0dgsc5c</bpmn:outgoing>
-    </bpmn:serviceTask>
     <bpmn:sequenceFlow id="Flow_0ffjlwj" sourceRef="com_signal" targetRef="Activity_1ewc3i5" />
     <bpmn:startEvent id="com_signal" name="com signal" camunda:initiator="myTask">
       <bpmn:extensionElements />
@@ -84,6 +80,10 @@
     <bpmn:endEvent id="Event_12adv7h" name="End Task">
       <bpmn:incoming>Flow_0b1vpby</bpmn:incoming>
     </bpmn:endEvent>
+    <bpmn:serviceTask id="Activity_1ewc3i5" name="Publish Signal" camunda:delegateExpression="${logger}">
+      <bpmn:incoming>Flow_0ffjlwj</bpmn:incoming>
+      <bpmn:outgoing>Flow_0dgsc5c</bpmn:outgoing>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmn:signal id="Signal_3a8t1nf" name="publish_com_signal" />
   <bpmn:category id="Category_0wtgw7o">

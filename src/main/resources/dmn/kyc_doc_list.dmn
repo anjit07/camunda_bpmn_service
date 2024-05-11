@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1884hjn" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+  <decision id="kyc_dco_list" name="KYC DOC LIST">
+    <decisionTable id="DecisionTable_18qprcy" hitPolicy="COLLECT">
+      <input id="Input_1" label="Type">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>type</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Doc Name" name="docName" typeRef="string" />
+      <rule id="DecisionRule_02t4sg5">
+        <inputEntry id="UnaryTests_0tojemq">
+          <text>"account"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pngsbg">
+          <text>"PAN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ezvnu2">
+        <inputEntry id="UnaryTests_1e9qz5r">
+          <text>"account"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1t1znsj">
+          <text>"AADHAR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0z1u7oq">
+        <inputEntry id="UnaryTests_07mfd32">
+          <text>"loan"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ojw5jb">
+          <text>"PAN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ack5c8">
+        <inputEntry id="UnaryTests_1eb6rpe">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16c4fdf">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="kyc_dco_list">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

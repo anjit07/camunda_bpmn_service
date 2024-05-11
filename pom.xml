@@ -38,8 +38,19 @@
             <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
             <version>1.22.0</version>
         </dependency>
+		<dependency>
+			<groupId>org.graalvm.js</groupId>
+			<artifactId>js</artifactId>
+			<version>22.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.graalvm.js</groupId>
+			<artifactId>js-scriptengine</artifactId>
+			<version>22.3.1</version>
+		</dependency>
 
-        <dependency>
+
+		<dependency>
             <groupId>org.camunda.bpm</groupId>
             <artifactId>camunda-engine-plugin-spin</artifactId>
             <version>${camunda.spring-boot.version}</version>
