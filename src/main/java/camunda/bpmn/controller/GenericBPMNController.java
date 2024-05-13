@@ -16,11 +16,10 @@ public class GenericBPMNController {
     private EvaluateBPMNService evaluateDMNService;
 
 
-    @PostMapping(value = "/{dmnKey}/evaluate",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Map<String,Object>> evaluate(@PathVariable("dmnKey") String dmnKey, @RequestBody Map<String,Object> request){
+    @PostMapping(value = "/{processKey}/start",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String,Object> evaluate(@PathVariable("processKey") String processKey, @RequestBody Map<String,Object> variables){
 
-
-        return evaluateDMNService.evaluate(dmnKey,request);
+        return evaluateDMNService.startProcess(processKey,variables);
     }
 
 }
