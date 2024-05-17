@@ -25,4 +25,12 @@ public class UtilsService {
         list.add("Adhar");
         return list;
     }
+
+    public String sampleMesg(String msg){
+
+        System.out.println("INFO : "+msg);
+
+        return msg;
+    }
+
 }

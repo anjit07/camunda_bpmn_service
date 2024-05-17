@@ -16,7 +16,7 @@
     <bpmn:sequenceFlow id="Flow_1swv7d5" sourceRef="Activity_0f7pjk9" targetRef="Event_09znjnk" />
     <bpmn:intermediateThrowEvent id="Event_0ltyb0q" name="Link-B">
       <bpmn:incoming>Flow_0osghyf</bpmn:incoming>
-      <bpmn:linkEventDefinition id="LinkEventDefinition_0ptwzv0" name="" />
+      <bpmn:linkEventDefinition id="LinkEventDefinition_0ptwzv0" name="Link-B" />
     </bpmn:intermediateThrowEvent>
     <bpmn:sequenceFlow id="Flow_096ajpe" sourceRef="Event_11plw2j" targetRef="Activity_01dq96c" />
     <bpmn:sequenceFlow id="Flow_0osghyf" sourceRef="Activity_01dq96c" targetRef="Event_0ltyb0q" />
@@ -31,7 +31,7 @@
     <bpmn:sequenceFlow id="Flow_0bpobdc" sourceRef="Activity_182w0rr" targetRef="Event_0xan5o2" />
     <bpmn:intermediateCatchEvent id="Event_1n7zk3j" name="Link-B">
       <bpmn:outgoing>Flow_1l9i4ur</bpmn:outgoing>
-      <bpmn:linkEventDefinition id="LinkEventDefinition_1t14hg6" name="" />
+      <bpmn:linkEventDefinition id="LinkEventDefinition_1t14hg6" name="Link-B" />
     </bpmn:intermediateCatchEvent>
     <bpmn:userTask id="Activity_182w0rr" name="UserTask-3">
       <bpmn:incoming>Flow_1l9i4ur</bpmn:incoming>

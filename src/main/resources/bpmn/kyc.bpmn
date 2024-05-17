@@ -64,9 +64,6 @@
     <bpmn:userTask id="Activity_0ehovqn" name="User">
       <bpmn:extensionElements>
         <camunda:executionListener delegateExpression="${userTaskListener}" event="start" />
-        <camunda:inputOutput>
-          <camunda:inputParameter name="uploaded">""</camunda:inputParameter>
-        </camunda:inputOutput>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0p8pylx</bpmn:incoming>
       <bpmn:incoming>Flow_1apbq96</bpmn:incoming>
