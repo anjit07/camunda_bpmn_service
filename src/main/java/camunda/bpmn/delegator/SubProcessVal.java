@@ -26,12 +26,6 @@ public class SubProcessVal implements JavaDelegate {
 
     }
 
-    public static void main(String[] args) {
-
-        SubProcessVal v = new  SubProcessVal();
-        v.tesList();
-
-    }
 
 
     public void tesList(){
